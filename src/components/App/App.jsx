@@ -1,10 +1,10 @@
+import Header from "../Header/Header";
 
 function App() {
     return (
-      <div>
-        <header>
-          <h1>React Gallery</h1>
-        </header>
+      <div data-testid="app">
+      
+      <Header />
 
         <p>The gallery goes here!</p>
         <img src="images/goat_small.jpg"/>
