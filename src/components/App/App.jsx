@@ -17,7 +17,8 @@ function App() {
   const grabGallery = () => {
     axios.get('/api/gallery')
       .then((response) =>{
-        console.log(response.data)
+        console.log(response.data);
+        setGalleryData(response.data);
       })
 
   }
@@ -27,9 +28,27 @@ function App() {
       
       <Header />
 
+      {/* testing response data with json stringify
+
+      {JSON.stringify(galleryData)} */}
+
         <p>The gallery goes here!</p>
-        <img src="images/goat_small.jpg"/>
-        <img src="images/goat_stache.png"/>
+        
+        <ul>
+
+          { galleryData.map(
+            function(gallery) {
+              return (
+                <li key={gallery.id}>
+                 <img src={gallery.url}/> < br/>{gallery.title} < br/> {gallery.description}< br/>{gallery.likes}< br/>
+                </li>
+              )
+            }
+          ) }
+
+        </ul>
+
+
       </div>
     );
 }
