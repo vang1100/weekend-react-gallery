@@ -29,16 +29,32 @@ function App() {
 
   }
 
+  // PUT - For Likes
+
+  const addLike = () => {
+    axios.put('/api/gallery/:id')
+      .then((response) => {
+        console.log(response);
+        grabGallery();
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
     return (
       <div data-testid="app">
       
       <Header />
+
+      <button onClick={() => addLike()}>Like</button>
 
       {/* testing response data with json stringify
 
       {JSON.stringify(galleryData)} */}
 
         <p>The gallery goes here!</p>
+      
         
         <ul>
 
