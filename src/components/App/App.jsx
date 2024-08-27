@@ -8,6 +8,12 @@ function App() {
 
     const [galleryData, setGalleryData] = useState([]);
 
+    const [toggle, setToggle] = useState(true);
+
+    const handleChange = () => {
+      return setToggle(!toggle);
+    }
+
   // GET GALLERY DATA
 
   useEffect (() => {
@@ -40,7 +46,7 @@ function App() {
             function(gallery) {
               return (
                 <li key={gallery.id}>
-                 <img src={gallery.url}/> < br/>{gallery.title} < br/> {gallery.description}< br/>{gallery.likes}< br/>
+               {gallery.title}<p onClick={() => handleChange()}>{toggle ? (<img src={gallery.url}/>) : (gallery.description)}</p>
                 </li>
               )
             }
