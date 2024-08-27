@@ -1,6 +1,27 @@
 import Header from "../Header/Header";
+import axios from 'axios';
+import {useEffect, useState} from 'react';
 
 function App() {
+
+  // VARIBLES
+
+    const [galleryData, setGalleryData] = useState([]);
+
+  // GET GALLERY DATA
+
+  useEffect (() => {
+    grabGallery();
+  },[])
+
+  const grabGallery = () => {
+    axios.get('/api/gallery')
+      .then((response) =>{
+        console.log(response.data)
+      })
+
+  }
+
     return (
       <div data-testid="app">
       
