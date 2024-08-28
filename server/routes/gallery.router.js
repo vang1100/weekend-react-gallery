@@ -24,6 +24,7 @@ router.put('/like/:id', (req, res) => {
   // code here
   console.log(req.params);
   const id = Number(req.params.id);
+  console.log('what is the id?', id);
   let queryText = ` UPDATE "gallery" set "likes" = "likes" + 1 WHERE "id" = $1;`;
   pool.query(queryText, [id])
       .then((result) => {

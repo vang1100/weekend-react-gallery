@@ -7,10 +7,12 @@ function GalleryItem(props) {
 
     const gallery = props.gallery;
 
+    const grabGallery = props.grabGallery;
+
      const [toggle, setToggle] = useState(true);
 
-    const addLike = () => {
-        axios.put('/api/gallery/:id')
+    const addLike = (id) => {
+        axios.put(`/api/gallery/like/${id}`)
           .then((response) => {
             console.log(response);
             grabGallery();
@@ -31,7 +33,7 @@ function GalleryItem(props) {
     { toggle ? (<img src={gallery.url}/> ):(gallery.description)} 
     </p>
     < br /> 
-        <button>LIKE</button> 
+        <button onClick={() => addLike(gallery.id)}>LIKE</button> 
     < br />
         {gallery.likes}
         < br />
