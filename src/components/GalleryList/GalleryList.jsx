@@ -1,15 +1,15 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 
-function GalleryList(props) {
+function GalleryList({galleryData, grabGallery}) {
 
-    const galleryData = props.galleryData;
+    
 
     return(
         <ul>
             {
                 galleryData.map((gallery) => (
-                    <GalleryItem key={gallery.id} gallery={gallery} />
+                    <GalleryItem key={gallery.id} gallery={gallery} grabGallery={grabGallery}/>
                 ))
             }
         </ul>

@@ -33,8 +33,8 @@ function App() {
       <Header />
 
       <p>The gallery goes here!</p>
-      
-      <GalleryList galleryData={galleryData} />
+
+      <GalleryList galleryData={galleryData} grabGallery={grabGallery} />
 
       {/* <button onClick={() => addLike()}>Like</button> */}
 

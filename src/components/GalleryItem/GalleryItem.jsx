@@ -3,11 +3,11 @@ import {useState} from 'react';
 
   // PUT - For Likes
 
-function GalleryItem(props) {
+function GalleryItem({gallery, grabGallery}) {
 
-    const gallery = props.gallery;
+    // const gallery = props.gallery;
 
-    const grabGallery = props.grabGallery;
+    // const grabGallery = props.grabGallery;
 
      const [toggle, setToggle] = useState(true);
 
