@@ -28,7 +28,7 @@ function GalleryItem({gallery, grabGallery}) {
     
       return (
     <>
-    {gallery.title} 
+   <h2>{gallery.title} </h2> 
     <p onClick={() => handleChange()}>
     { toggle ? (<img src={gallery.url}/> ):(gallery.description)} 
     </p>
