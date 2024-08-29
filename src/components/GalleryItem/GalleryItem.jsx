@@ -27,18 +27,19 @@ function GalleryItem({gallery, grabGallery}) {
       }
     
       return (
-    <>
+    <div data-testid="galleryItem">
    <h2>{gallery.title} </h2> 
-    <p onClick={() => handleChange()}>
+    <p data-testid="galleryItem" onClick={() => handleChange()}>
     { toggle ? (<img src={gallery.url}/> ):(gallery.description)} 
     </p>
     < br /> 
-        <button onClick={() => addLike(gallery.id)}>LIKE</button> 
+        <button data-testid="galleryItem" onClick={() => addLike(gallery.id)}>LIKE</button> 
     < br />
         {gallery.likes}
         < br />
+        
     
-    </>
+    </div >
 )
 }
 

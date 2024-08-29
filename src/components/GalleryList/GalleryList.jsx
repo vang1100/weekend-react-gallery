@@ -6,7 +6,7 @@ function GalleryList({galleryData, grabGallery}) {
     
 
     return(
-        <ul>
+        <ul data-testid="galleryList">
             {
                 galleryData.map((gallery) => (
                     <GalleryItem key={gallery.id} gallery={gallery} grabGallery={grabGallery}/>
